@@ -1,0 +1,124 @@
+/* Archivo: style.css */
+
+body {
+  margin: 0;
+  font-family: 'UnifrakturCook', cursive;
+  background-color: #1a1a1a;
+  color: #f0e6d2;
+  background-image: url('assets/bg-texture.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('assets/fog.gif') center center / cover no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: fadeFog 10s ease-in-out infinite alternate;
+}
+
+@keyframes fadeFog {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.2; }
+}
+
+header {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px #000;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f0e6d2;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #cfa760;
+}
+
+.hero {
+  padding-top: 120px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #cfa760;
+}
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section.dark {
+  background-color: #2a2a2a;
+}
+
+.links a {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #444;
+  color: #f0e6d2;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.links a:hover {
+  background-color: #cfa760;
+  color: #1a1a1a;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
