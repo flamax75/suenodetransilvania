@@ -9,11 +9,15 @@
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo Sueño de Transilvania" class="logo" />
+    <img src="assets/maxim1.jpg" alt="Logo Sueño de Transilvania" class="logo" />
     <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#multimedia">Multimedia</a></li>
+      <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">
+        <span class="menu-icon"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#musica">Música</a></li>
+        <li><a href="#creador">Creador</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -21,26 +25,42 @@
 
   <section class="hero">
     <h1>Sueño de Transilvania</h1>
-    <p>Sígueme y conviértete en murciélago. Solo los murciélagos pueden comentar.</p>
+    <p>Un universo creado por Maxim Capalnas Flaviu</p>
+    <img src="assets/maxim2.jpg" alt="Maxim en Harley" class="imagen-principal" />
   </section>
 
-  <section id="sobre" class="section dark">
-    <h2>Sobre el Proyecto</h2>
-    <p>Un viaje visual y sonoro por la historia medieval de España. Música, cultura e identidad en un sueño eterno entre castillos, batallas y leyendas.</p>
-  </section>
-
-  <section id="multimedia" class="section">
-    <h2>Contenido Destacado</h2>
+  <section id="musica" class="section dark">
+    <h2>Canciones</h2>
+    <p>Escucha las creaciones musicales de Sueño de Transilvania:</p>
     <div class="links">
       <a href="https://www.youtube.com/@sueno_de_transilvania" target="_blank">YouTube</a>
       <a href="https://open.spotify.com/artist/0soBWWidG5nKvEyaBp07QJ" target="_blank">Spotify</a>
-      <a href="https://www.tiktok.com/@suenodetransilvania" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <section id="creador" class="section">
+    <h2>Sobre el creador</h2>
+    <p>Maxim Capalnas Flaviu es el alma detras de Sueño de Transilvania. Creador de contenido histórico y musical, combina tecnología de inteligencia artificial con inspiración medieval y visual para llevar a su audiencia en un viaje sonoro y visual único. Más de 20 años de experiencia creativa, ahora también como Partner de YouTube y colaborador de AdSense.</p>
+    <img src="assets/maxim10.jpg" alt="Maxim Capalnas Flaviu" class="imagen-creador" />
+  </section>
+
+  <section id="galeria" class="section dark">
+    <h2>Galería</h2>
+    <div class="galeria">
+      <img src="assets/maxim3.jpg" alt="Maxim retrato">
+      <img src="assets/maxim4.jpg" alt="Maxim en Harley lateral">
+      <img src="assets/maxim5.jpg" alt="Maxim fondo rojo">
+      <img src="assets/maxim6.jpg" alt="Maxim con gafas y logo">
+      <img src="assets/maxim7.jpg" alt="Maxim camiseta Madrid">
+      <img src="assets/maxim8.jpg" alt="Maxim chaleco FLAMAX">
+      <img src="assets/maxim9.jpg" alt="Maxim cuerpo entero AC/DC">
     </div>
   </section>
 
   <section id="contacto" class="section dark">
-    <h2>Contacto</h2>
-    <p>Para colaboraciones: <a href="mailto:suenodetransilvania@gmail.com">suenodetransilvania@gmail.com</a></p>
+    <h2>Contacto y Colaboraciones</h2>
+    <p>Para propuestas, colaboraciones o prensa, escríbeme a:</p>
+    <p><a href="mailto:suenodetransilvania@gmail.com">suenodetransilvania@gmail.com</a></p>
   </section>
 
   <footer>
