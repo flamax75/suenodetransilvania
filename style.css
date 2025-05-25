@@ -1,36 +1,57 @@
-/* Archivo: style.css */
-
+/* BASE */
 body {
   margin: 0;
   font-family: 'UnifrakturCook', cursive;
   background-color: #1a1a1a;
   color: #f0e6d2;
-  background-image: url('assets/bg-texture.jpg');
+  background-image: url('assets/maxim1.jpg');
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  overflow: hidden;
+  z-index: 2;
+  overflow-x: hidden;
 }
 
+/* LOGO DE FONDO DIFUMINADO */
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: auto;
+  background-image: url('assets/maxim1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.08;
+  z-index: 0;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* NIEBLA ANIMADA */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background: url('assets/fog.gif') center center / cover no-repeat;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   animation: fadeFog 10s ease-in-out infinite alternate;
 }
 
 @keyframes fadeFog {
-  0% { opacity: 0.1; }
-  100% { opacity: 0.2; }
+  0% { opacity: 0.2; }
+  100% { opacity: 0.35; }
 }
 
+/* HEADER */
 header {
   background-color: #111;
   display: flex;
@@ -46,32 +67,56 @@ header {
 
 .logo {
   height: 60px;
+  border-radius: 50%;
+  border: 2px solid #cfa760;
 }
 
+/* NAVIGATION */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: #f0e6d2;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  white-space: nowrap;
   transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #cfa760;
 }
 
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #f0e6d2;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-icon::before {
+  content: "☰";
+}
+
+body.menu-open .menu-icon::before {
+  content: "✖";
+}
+
+/* HERO */
 .hero {
   padding-top: 120px;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
   padding: 4rem 2rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -85,17 +130,27 @@ nav a:hover {
   color: #cfa760;
 }
 
+.imagen-principal {
+  margin-top: 2rem;
+  width: 300px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+/* SECCIONES */
 .section {
   padding: 4rem 2rem;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section.dark {
   background-color: #2a2a2a;
 }
 
+/* ENLACES */
 .links a {
   display: inline-block;
   margin: 1rem;
@@ -113,6 +168,42 @@ nav a:hover {
   color: #1a1a1a;
 }
 
+/* CREADOR */
+.imagen-creador {
+  margin-top: 2rem;
+  width: 220px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(207, 167, 96, 0.5);
+}
+
+/* GALERÍA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+  margin-top: 2rem;
+  background-color: #000;
+  padding: 0;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background-color: #000;
+  transition: transform 0.3s ease;
+  filter: grayscale(0.1) contrast(1.1);
+}
+
+.galeria img:hover {
+  transform: scale(1.02);
+  filter: grayscale(0) contrast(1.2) brightness(1.1);
+  z-index: 2;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1rem;
@@ -120,5 +211,67 @@ footer {
   color: #888;
   font-size: 0.9rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    z-index: 999;
+    text-align: center;
+  }
+
+  body.menu-open .nav-links {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .imagen-principal,
+  .imagen-creador {
+    width: 90%;
+  }
+
+  .links a {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+  }
 }
