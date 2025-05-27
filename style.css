@@ -1,89 +1,107 @@
-/* Reset general */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: 'UnifrakturCook', serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
   background-color: #111;
   color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-  text-align: center;
 }
 
-/* Header y logo */
 .main-header {
-  padding: 40px 20px 20px;
+  text-align: center;
+  padding: 1rem;
 }
 
 .logo-principal {
-  width: 180px;
+  max-width: 200px;
   height: auto;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 6px crimson);
-  transition: transform 0.3s ease;
 }
 
-.logo-principal:hover {
-  transform: scale(1.05);
-}
-
-/* Navegación */
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .main-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
+  font-weight: bold;
 }
 
-.main-nav a:hover {
-  color: #c33;
-}
-
-/* Sección de videos */
 .videos {
-  padding: 20px;
+  padding: 2rem;
 }
 
 .videos h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.5rem;
 }
 
-/* Cuadrícula de videos */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
-  gap: 15px;
-  padding: 0 10px 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.video-grid iframe {
+.video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-item iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
-  border-radius: 8px;
+}
+
+.video-buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.video-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.video-buttons button:hover {
+  background-color: #555;
+}
+
+.video-info {
+  display: none;
+  background-color: #222;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .video-grid {
     grid-template-columns: 1fr;
   }
