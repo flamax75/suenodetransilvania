@@ -1,277 +1,160 @@
-/* BASE */
+/* Estilos generales */
 body {
   margin: 0;
-  font-family: 'UnifrakturCook', cursive;
-  background-color: #1a1a1a;
-  color: #f0e6d2;
-  background-image: url('assets/maxim1.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 2;
-  overflow-x: hidden;
-}
-
-/* LOGO DE FONDO DIFUMINADO */
-body::after {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vw;
-  height: auto;
-  background-image: url('assets/maxim1.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  opacity: 0.08;
-  z-index: 0;
-  filter: blur(2px);
-  pointer-events: none;
-}
-
-/* NIEBLA ANIMADA */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('assets/fog.gif') center center / cover no-repeat;
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 1;
-  animation: fadeFog 10s ease-in-out infinite alternate;
-}
-
-@keyframes fadeFog {
-  0% { opacity: 0.2; }
-  100% { opacity: 0.35; }
-}
-
-/* HEADER */
-header {
+  font-family: 'Arial', sans-serif;
   background-color: #111;
+  color: #eee;
+  background-image: url('assets/fondo-logo-opacity.png'), url('assets/fog.gif');
+  background-size: cover, cover;
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+}
+
+header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0 10px #000;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .logo {
-  height: 60px;
+  width: 150px;
+  height: auto;
   border-radius: 50%;
-  border: 2px solid #cfa760;
+  box-shadow: 0 0 15px #fff3;
 }
 
-/* NAVIGATION */
 nav ul {
   list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
-.nav-links a {
+nav a {
+  color: #fff;
   text-decoration: none;
-  color: #f0e6d2;
-  font-size: 1.1rem;
-  padding: 0.3rem;
-  white-space: nowrap;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #cfa760;
+nav a:hover {
+  color: #c00;
 }
 
-/* BOTÓN HAMBURGUESA */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #f0e6d2;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.menu-icon::before {
-  content: "☰";
-}
-
-body.menu-open .menu-icon::before {
-  content: "✖";
-}
-
-/* HERO */
 .hero {
-  padding-top: 120px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 4rem 2rem;
-  position: relative;
-  z-index: 2;
+  padding: 3rem 1rem;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: #cfa760;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .imagen-principal {
-  margin-top: 2rem;
-  width: 300px;
   max-width: 90%;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0008;
 }
 
-/* SECCIONES */
 .section {
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .section.dark {
-  background-color: #2a2a2a;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
 }
 
-/* ENLACES */
+.section h2 {
+  text-align: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 .links a {
   display: inline-block;
-  margin: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #444;
-  color: #f0e6d2;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #c00;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
   transition: background 0.3s;
 }
 
 .links a:hover {
-  background-color: #cfa760;
-  color: #1a1a1a;
+  background-color: #900;
 }
 
-/* CREADOR */
 .imagen-creador {
-  margin-top: 2rem;
-  width: 220px;
+  display: block;
   max-width: 90%;
+  margin: 2rem auto 0;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(207, 167, 96, 0.5);
+  box-shadow: 0 0 20px #0008;
 }
 
-/* GALERÍA */
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0;
-  margin-top: 2rem;
-  background-color: #000;
-  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 5px;
 }
 
 .galeria img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  background-color: #000;
-  transition: transform 0.3s ease;
-  filter: grayscale(0.1) contrast(1.1);
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #0006;
 }
 
-.galeria img:hover {
-  transform: scale(1.02);
-  filter: grayscale(0) contrast(1.2) brightness(1.1);
-  z-index: 2;
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
-/* FOOTER */
+.video-gallery iframe {
+  width: 320px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000055;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #111;
-  color: #888;
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 0.9rem;
-  position: relative;
-  z-index: 2;
+  color: #ccc;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 1rem 0;
-    z-index: 999;
-    text-align: center;
-  }
-
-  body.menu-open .nav-links {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+@media (max-width: 600px) {
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .imagen-principal,
-  .imagen-creador {
-    width: 90%;
-  }
-
-  .links a {
-    display: block;
-    margin: 1rem auto;
-    width: 80%;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
+  .video-gallery iframe {
+    width: 90vw;
+    height: 50vw;
   }
 }
