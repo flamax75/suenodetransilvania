@@ -1,160 +1,90 @@
-/* Estilos generales */
-body {
+/* Reset general */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #111;
-  color: #eee;
-  background-image: url('assets/fondo-logo-opacity.png'), url('assets/fog.gif');
-  background-size: cover, cover;
-  background-repeat: no-repeat, repeat;
-  background-position: center, center;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #fff3;
-}
-
-nav ul {
-  list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  box-sizing: border-box;
 }
 
-nav a {
+body {
+  font-family: 'UnifrakturCook', serif;
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Header y logo */
+.main-header {
+  padding: 40px 20px 20px;
+}
+
+.logo-principal {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 6px crimson);
+  transition: transform 0.3s ease;
+}
+
+.logo-principal:hover {
+  transform: scale(1.05);
+}
+
+/* Navegación */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #c00;
+.main-nav a:hover {
+  color: #c33;
 }
 
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
+/* Sección de videos */
+.videos {
+  padding: 20px;
 }
 
-.hero h1 {
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 3rem;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.imagen-principal {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #0008;
-}
-
-.section {
-  padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.section.dark {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-top: 2px solid #333;
-  border-bottom: 2px solid #333;
-}
-
-.section h2 {
-  text-align: center;
-  font-family: 'UnifrakturCook', cursive;
+.videos h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
-.links a {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #c00;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.links a:hover {
-  background-color: #900;
-}
-
-.imagen-creador {
-  display: block;
-  max-width: 90%;
-  margin: 2rem auto 0;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #0008;
-}
-
-.galeria {
+/* Cuadrícula de videos */
+.video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+  gap: 15px;
+  padding: 0 10px 40px;
 }
 
-.galeria img {
+.video-grid iframe {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #0006;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
 }
 
-.video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.video-gallery iframe {
-  width: 320px;
-  height: 180px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00000055;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 0.9rem;
-  color: #ccc;
+/* Responsive */
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .video-gallery iframe {
-    width: 90vw;
-    height: 50vw;
+  .video-grid {
+    grid-template-columns: 1fr;
   }
 }
