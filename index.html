@@ -30,112 +30,140 @@
     <section class="videos">
       <h2>Últimos vídeos</h2>
       <div class="video-grid">
-        <!-- VIDEO EJEMPLO -->
+
+        <!-- Video 1 -->
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/k5_aSunleOM" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/k5_aSunleOM" title="Una canción en un bar" allowfullscreen></iframe>
           <div class="video-buttons">
             <button onclick="toggleSection(this, 'letra')">Letra</button>
             <button onclick="toggleSection(this, 'historia')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 1</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 1</p></div>
+          <div class="video-info letra">
+            <h3>Letra: Una canción en un bar</h3>
+            <p>
+              El motor se apagó cuando el sol se marchó, con el casco en la barra pidió lo de siempre,<br>
+              habla poco, pero el viejo barman lo entiende, es de esos que guardan heridas silentes.<br><br>
+              Una cerveza, una guitarra, un amigo en un bar,<br>
+              su moto en la puerta le espera pa' andar,<br>
+              una canción que resuena y le hace llorar,<br>
+              un amor ya muy lejos que no puede olvidar...<br><br>
+              En la radio se oye aquel viejo tema,<br>
+              el que bailaban cuando ella era su estrella,<br>
+              y aunque han pasado ya años de carretera,<br>
+              su alma tiembla cuando suena la canción.<br><br>
+              Kilómetros grises, noches sin hablar,<br>
+              rostros sin nombre, pensamientos sin paz.<br>
+              Pero hay una ruta que nunca se va:<br>
+              la que lleva al pasado, donde ella está.<br><br>
+              A veces sonríe cuando cree verla,<br>
+              como un faro perdido brillando en la niebla.<br>
+              Acelera fuerte, como si el viento pudiera<br>
+              borrar lo que lleva por dentro.<br><br>
+              Una cerveza, una guitarra, un amigo en un bar,<br>
+              su moto en la puerta le espera pa' andar,<br>
+              una canción que resuena y le hace llorar,<br>
+              un amor ya muy lejos que no puede olvidar...
+            </p>
+          </div>
+          <div class="video-info historia">
+  <h3>Historia de la canción </h3>
+  <p>
+    Esta canción nació de muchas conversaciones con amigos moteros. Compañeros de ruta, de curvas, de noches largas hablando en la barra de algún bar perdido. Muchos de ellos, duros por fuera, fuertes en apariencia, pero con historias de amor que nunca se apagaron del todo. Amores que quedaron atrás por decisiones, por el camino, por la vida misma... pero que siguen vivos, ahí, en el fondo, como brasas que no se ven pero siguen ardiendo.
+    <br><br>
+    Cada uno de ellos tiene <em>esa canción</em>, la que suena en la radio y les cambia el rostro. La que les recuerda a ella. La que hace que bajen la mirada un segundo o aprieten el puño con más fuerza sobre el manillar.
+    <br><br>
+    Esta canción es un homenaje a todos esos moteros que, aunque han aprendido a seguir adelante, nunca han olvidado a quien una vez les iluminó el corazón. Porque hay rutas que se hacen con el cuerpo... y otras que solo se recorren con el alma.
+  </p>
+</div>
+
+        </div>
+
+        <!-- Videos 2 a 9 -->
+        <div class="video-item">
+          <iframe src="https://www.youtube.com/embed/ySV4ItuitYY" title="Canción 2" allowfullscreen></iframe>
+          <div class="video-buttons">
+            <button onclick="toggleInfo('letra2')">Letra</button>
+            <button onclick="toggleInfo('historia2')">Historia</button>
+          </div>
+          <div class="video-info" id="letra2"><h3>Letra: Canción 2</h3><p>Letra canción 2</p></div>
+          <div class="video-info" id="historia2"><h3>Historia: Canción 2</h3><p>Historia canción 2</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/ySV4ItuitYY" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/9PAYsUHLO2s" title="Canción 3" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra3')">Letra</button>
+            <button onclick="toggleInfo('historia3')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 2</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 2</p></div>
+          <div class="video-info" id="letra3"><h3>Letra: Canción 3</h3><p>Letra canción 3</p></div>
+          <div class="video-info" id="historia3"><h3>Historia: Canción 3</h3><p>Historia canción 3</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/9PAYsUHLO2s" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Hm_9tu9nIpI" title="Canción 4" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra4')">Letra</button>
+            <button onclick="toggleInfo('historia4')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 3</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 3</p></div>
+          <div class="video-info" id="letra4"><h3>Letra: Canción 4</h3><p>Letra canción 4</p></div>
+          <div class="video-info" id="historia4"><h3>Historia: Canción 4</h3><p>Historia canción 4</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/Hm_9tu9nIpI" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/19upvqws1kM" title="Canción 5" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra5')">Letra</button>
+            <button onclick="toggleInfo('historia5')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 4</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 4</p></div>
+          <div class="video-info" id="letra5"><h3>Letra: Canción 5</h3><p>Letra canción 5</p></div>
+          <div class="video-info" id="historia5"><h3>Historia: Canción 5</h3><p>Historia canción 5</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/19upvqws1kM" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/ddWvxSjvt_k" title="Canción 6" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra6')">Letra</button>
+            <button onclick="toggleInfo('historia6')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 5</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 5</p></div>
+          <div class="video-info" id="letra6"><h3>Letra: Canción 6</h3><p>Letra canción 6</p></div>
+          <div class="video-info" id="historia6"><h3>Historia: Canción 6</h3><p>Historia canción 6</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/ddWvxSjvt_k" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Xof4izfiMIk" title="Canción 7" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra7')">Letra</button>
+            <button onclick="toggleInfo('historia7')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 6</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 6</p></div>
+          <div class="video-info" id="letra7"><h3>Letra: Canción 7</h3><p>Letra canción 7</p></div>
+          <div class="video-info" id="historia7"><h3>Historia: Canción 7</h3><p>Historia canción 7</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/Xof4izfiMIk" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/BN18fQWVlXA" title="Canción 8" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra8')">Letra</button>
+            <button onclick="toggleInfo('historia8')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 7</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 7</p></div>
+          <div class="video-info" id="letra8"><h3>Letra: Canción 8</h3><p>Letra canción 8</p></div>
+          <div class="video-info" id="historia8"><h3>Historia: Canción 8</h3><p>Historia canción 8</p></div>
         </div>
 
         <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/BN18fQWVlXA" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/sR1fvngT7Tw" title="Canción 9" allowfullscreen></iframe>
           <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
+            <button onclick="toggleInfo('letra9')">Letra</button>
+            <button onclick="toggleInfo('historia9')">Historia</button>
           </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 8</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 8</p></div>
+          <div class="video-info" id="letra9"><h3>Letra: Canción 9</h3><p>Letra canción 9</p></div>
+          <div class="video-info" id="historia9"><h3>Historia: Canción 9</h3><p>Historia canción 9</p></div>
         </div>
 
-        <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/sR1fvngT7Tw" frameborder="0" allowfullscreen></iframe>
-          <div class="video-buttons">
-            <button onclick="toggleSection(this, 'letra')">Letra</button>
-            <button onclick="toggleSection(this, 'historia')">Historia</button>
-          </div>
-          <div class="video-info letra"><p><strong>Letra:</strong> Letra canción 9</p></div>
-          <div class="video-info historia"><p><strong>Historia:</strong> Historia canción 9</p></div>
-        </div>
       </div>
     </section>
   </main>
 
-  <script>
-    function toggleSection(button, type) {
-      const videoItem = button.closest('.video-item');
-      const section = videoItem.querySelector('.video-info.' + type);
-      const allSections = videoItem.querySelectorAll('.video-info');
-
-      allSections.forEach(info => {
-        if (info !== section) info.style.display = 'none';
-      });
-
-      section.style.display = (section.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
+
