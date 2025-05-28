@@ -117,3 +117,19 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.intro-frase {
+  text-align: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.section-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
