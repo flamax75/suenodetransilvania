@@ -79,17 +79,23 @@ body {
 .video-buttons button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #333;
+  background-color: transparent;
   color: #fff;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .video-buttons button:hover {
-  background-color: #555;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* Sombra roja suave */
+  transform: scale(1.02);
 }
+
+
+
+
+
 
 .video-info {
   display: none;
@@ -285,4 +291,45 @@ body {
 
 .footer a:hover {
   color: #fff;
+}
+.video-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* sombra roja tenue */
+}
+.logo-principal {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-principal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); /* Sombra roja suave */
+}
+.quien-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); /* Sombra roja */
+}
+.main-nav a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 0 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.main-nav a:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 0, 102, 0.7); /* resplandor rosado */
+  text-shadow: 0 0 5px rgba(255, 0, 102, 0.6);
 }
