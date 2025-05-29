@@ -270,3 +270,19 @@ body {
   border-top: 1px solid #333;
   margin-top: 2rem;
 }
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #fff;
+}
