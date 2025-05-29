@@ -132,4 +132,141 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+/* --- QUIÉN ES SUEÑO DE TRANSILVANIA --- */
+.quien-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
 
+.quien-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.quien-container h2 {
+  text-align: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .quien-container {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .quien-container img {
+    margin: 1rem 0;
+  }
+}
+
+.quien-main {
+  padding: 2rem;
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quien-main h1 {
+  text-align: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.quien-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.quien-img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 1.5rem auto;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+/* Contacto Page */
+.contacto-main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.contacto-section h1 {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contacto-section p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.contacto-correo a {
+  color: #ff5555;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contacto-correo a:hover {
+  text-decoration: underline;
+}
+
+.redes-contacto {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn-red {
+  background-color: #ff5555;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #dd3333;
+}
+.contacto-correo a {
+  color: #ff5555;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contacto-correo a:hover {
+  text-decoration: underline;
+}
+.main-footer {
+  text-align: center;
+  background-color: #111;
+  color: #888;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+}
