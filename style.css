@@ -333,3 +333,44 @@ body {
   box-shadow: 0 0 10px rgba(255, 0, 102, 0.7); /* resplandor rosado */
   text-shadow: 0 0 5px rgba(255, 0, 102, 0.6);
 }
+.install-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  border: 1px solid #8b0000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  font-family: sans-serif;
+}
+
+.install-banner p {
+  margin: 0;
+  flex: 1;
+}
+
+.install-banner button {
+  margin-left: 0.5rem;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.install-banner button:hover {
+  background-color: #a30000;
+}
+
+.hidden {
+  display: none;
+}

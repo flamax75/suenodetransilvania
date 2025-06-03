@@ -591,6 +591,39 @@
   }
 </script>
 
+<div id="install-banner" class="install-banner hidden">
+  <p>¿Quieres instalar esta app en tu dispositivo?</p>
+  <button id="install-button">Instalar</button>
+  <button id="dismiss-button">Ahora no</button>
+</div>
+
+<script>
+  let deferredPrompt;
+  const banner = document.getElementById('install-banner');
+  const installBtn = document.getElementById('install-button');
+  const dismissBtn = document.getElementById('dismiss-button');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    banner.classList.remove('hidden');
+  });
+
+  installBtn.addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        deferredPrompt = null;
+        banner.classList.add('hidden');
+      });
+    }
+  });
+
+  dismissBtn.addEventListener('click', () => {
+    banner.classList.add('hidden');
+  });
+</script>
+
 </body>
 
 
