@@ -14,9 +14,23 @@
       "type": "image/png"
     },
     {
-      "src": "assets/logo-512.png",
+      "src": "assets/logo-192.png",
       "sizes": "192x192",
       "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/captura-movil.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/captura-escritorio.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }
