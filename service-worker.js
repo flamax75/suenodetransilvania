@@ -1,3 +1,4 @@
+// service-worker.js
 
 const CACHE_NAME = "suenodetransilvania-cache-v1";
 const urlsToCache = [
@@ -18,7 +19,7 @@ self.addEventListener("install", event => {
   );
 });
 
-// Activar y limpiar cachés viejas
+// Activar y limpiar cachés antiguas
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -33,12 +34,15 @@ self.addEventListener("activate", event => {
   );
 });
 
-// Interceptar peticiones y responder desde caché si está disponible
+// Interceptar peticiones solo del mismo origen (no de dominios externos)
 self.addEventListener("fetch", event => {
+  const url = new URL(event.request.url);
+
+  if (url.origin !== location.origin) return; // Ignora peticiones externas
+
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request).catch(() => {
-        // Manejo de error: recurso no disponible
         return new Response("Recurso no disponible sin conexión", {
           status: 503,
           statusText: "Offline"
