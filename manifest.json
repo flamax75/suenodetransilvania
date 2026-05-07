@@ -1,7 +1,7 @@
 {
   "name": "Sueño de Transilvania",
   "short_name": "Transilvania",
-  "start_url": "index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#8b0000",
@@ -32,5 +32,7 @@
       "type": "image/png",
       "form_factor": "wide"
     }
-  ]
+  ],
+  "description": "Proyecto musical de Maxim Capalnas Flaviu: canciones originales inspiradas en la historia de España, la carretera y el espíritu motero.",
+  "scope": "/"
 }

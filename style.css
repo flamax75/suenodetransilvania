@@ -374,3 +374,123 @@ body {
 .hidden {
   display: none;
 }
+/* Mejoras de legibilidad, móvil y accesibilidad */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.main-header,
+.videos,
+.quien-main,
+.contacto-main,
+.legal-main {
+  backdrop-filter: blur(2px);
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.main-nav {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-nav a:focus-visible,
+.video-buttons button:focus-visible,
+.install-banner button:focus-visible,
+.btn-red:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 3px;
+}
+
+.video-buttons button {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  min-width: 96px;
+}
+
+.video-info {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.main-footer a {
+  color: #ddd;
+}
+
+.main-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .main-header {
+    padding: 0.75rem;
+  }
+
+  .logo-principal {
+    max-width: 150px;
+  }
+
+  .main-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    margin: 0;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .videos,
+  .quien-main,
+  .contacto-main,
+  .legal-main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .videos h2,
+  .intro-frase,
+  .quien-main h1,
+  .contacto-section h1 {
+    font-size: 2rem;
+  }
+
+  .quien-section p {
+    text-align: left;
+  }
+
+  .quien-img {
+    max-width: 100%;
+  }
+
+  .redes-contacto,
+  .install-banner {
+    flex-direction: column;
+  }
+
+  .install-banner {
+    align-items: stretch;
+  }
+
+  .install-banner button {
+    margin: 0.75rem 0 0;
+  }
+}
