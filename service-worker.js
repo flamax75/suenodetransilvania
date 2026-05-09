@@ -1,4 +1,4 @@
-const CACHE_NAME = "suenodetransilvania-cache-v2";
+const CACHE_NAME = "suenodetransilvania-cache-v3";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -19,6 +19,7 @@ self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", event => {
@@ -27,7 +28,7 @@ self.addEventListener("activate", event => {
       cacheNames
         .filter(cacheName => cacheName !== CACHE_NAME)
         .map(cacheName => caches.delete(cacheName))
-    ))
+    )).then(() => self.clients.claim())
   );
 });
 
@@ -37,13 +38,30 @@ self.addEventListener("fetch", event => {
   if (url.origin !== location.origin) return;
   if (event.request.method !== "GET") return;
 
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request).then(response => {
+        const responseCopy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put("/index.html", responseCopy));
+        return response;
+      }).catch(() => caches.match("/index.html"))
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      return cachedResponse || fetch(event.request).catch(() => {
-        if (event.request.mode === "navigate") {
-          return caches.match("/index.html");
+    caches.match(event.request, { ignoreSearch: true }).then(cachedResponse => {
+      if (cachedResponse) return cachedResponse;
+
+      return fetch(event.request).then(response => {
+        if (!response || response.status !== 200 || response.type !== "basic") {
+          return response;
         }
 
+        const responseCopy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseCopy));
+        return response;
+      }).catch(() => {
         return new Response("Recurso no disponible sin conexión", {
           status: 503,
           statusText: "Offline",

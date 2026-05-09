@@ -27,6 +27,28 @@ function registerServiceWorker() {
     .catch(error => console.error('Error al registrar Service Worker', error));
 }
 
+function setupAnchorNavigation() {
+  if (!document.querySelectorAll) return;
+
+  const anchorLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      if (!document.querySelector) return;
+
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      if (history.replaceState) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    });
+  });
+}
+
 function setupInstallBanner() {
   const banner = document.getElementById('install-banner');
   const installBtn = document.getElementById('install-button');
@@ -57,5 +79,6 @@ function setupInstallBanner() {
 }
 
 updateFooterYear();
+setupAnchorNavigation();
 registerServiceWorker();
 setupInstallBanner();
