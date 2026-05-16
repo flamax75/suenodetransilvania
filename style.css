@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'UnifrakturCook', cursive;
   background-color: #111;
   color: #fff;
   background-image: url('assets/castillo-transilvania.jpg');
@@ -16,9 +16,37 @@ body {
   background-repeat: no-repeat;
 }
 
+body,
+body * {
+  font-family: 'UnifrakturCook', cursive !important;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .main-header {
   text-align: center;
   padding: 1rem;
+}
+
+.site-title {
+  margin: 0;
 }
 
 .logo-principal {
@@ -48,26 +76,26 @@ body {
   scroll-margin-top: 1rem;
 }
 
-.videos h1,
-.historia-shorts h1,
-.videos h2 {
+.videos h2,
+.historia-shorts h2 {
   text-align: center;
   font-family: 'UnifrakturCook', cursive;
 }
 
-.videos h1,
-.historia-shorts h1 {
+.videos > h2,
+.historia-shorts > h2 {
   font-size: 3rem;
   margin: 0 0 0.75rem;
 }
 
-.videos h2 {
+.intro-frase {
   font-size: 2.5rem;
 }
 
 .section-lead {
   text-align: center;
-  font-size: 1.1rem;
+  font-family: 'UnifrakturCook', cursive !important;
+  font-size: 2.5rem;
   margin: 0 auto 2rem;
 }
 
@@ -91,7 +119,6 @@ body {
 }
 
 .short-item h2 {
-  font-family: Arial, sans-serif;
   font-size: 0.95rem;
   line-height: 1.3;
   margin: 0.75rem 0 0.4rem;
@@ -257,7 +284,6 @@ body {
   padding: 2rem;
   background-color: #111;
   color: #fff;
-  font-family: Arial, sans-serif;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -425,7 +451,6 @@ body {
   align-items: center;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  font-family: sans-serif;
 }
 
 .install-banner p {
